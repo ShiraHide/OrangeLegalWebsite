@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>司法書士オレンジリーガル｜案B エディトリアル</title>
+<meta name="description" content="司法書士オレンジリーガル。相続・不動産・家族信託など、複雑な手続きをひとつひとつ解きほぐし、手続きの先にある安心をお届けします。" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --orange:#F39B17;
+    --orange-deep:#E07B00;
+    --pale:#F6EB9B;
+    --bg:#FCFAF5;
+    --paper:#FFFFFF;
+    --beige:#F2EADD;
+    --cream:#FBF4E8;
+    --ink:#2A2620;
+    --ink-soft:#6A6155;
+    --ink-faint:#A79C8C;
+    --line:rgba(42,38,32,.14);
+    --line-soft:rgba(42,38,32,.08);
+    --mincho:"Shippori Mincho B1", serif;
+    --sans:"Noto Sans JP", sans-serif;
+    --maxw:1240px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;scroll-padding-top:78px;}
+  body{
+    margin:0;font-family:var(--sans);color:var(--ink);background:var(--bg);
+    line-height:1.9;font-size:16px;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+  }
+  img{max-width:100%;display:block;}
+  a{color:inherit;text-decoration:none;}
+  h1,h2,h3,h4{font-family:var(--mincho);font-weight:600;margin:0;line-height:1.5;letter-spacing:.02em;}
+  p{margin:0;text-wrap:pretty;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 40px;}
+
+  /* labels */
+  .kicker{
+    font-family:var(--sans);font-weight:700;font-size:.72rem;letter-spacing:.28em;
+    color:var(--orange-deep);text-transform:uppercase;display:inline-flex;align-items:center;gap:14px;white-space:nowrap;
+  }
+  .kicker::before{content:"";width:30px;height:1px;background:var(--orange);}
+  .jp-label{font-family:var(--sans);font-weight:700;font-size:.82rem;letter-spacing:.2em;color:var(--ink-faint);}
+
+  /* ---------- Header ---------- */
+  .topline{height:4px;background:linear-gradient(90deg,var(--pale) 0 50%,var(--orange) 50% 100%);}
+  header{position:sticky;top:0;z-index:100;background:rgba(252,250,245,.86);backdrop-filter:saturate(140%) blur(12px);border-bottom:1px solid var(--line-soft);}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:74px;}
+  .brand{display:flex;align-items:center;gap:13px;}
+  .brand img{width:36px;height:36px;}
+  .brand .nm{font-family:var(--mincho);font-weight:700;font-size:1.1rem;letter-spacing:.06em;}
+  .brand .nm small{display:block;font-family:var(--sans);font-weight:500;font-size:.58rem;letter-spacing:.3em;color:var(--ink-faint);margin-top:2px;}
+  .nlinks{display:flex;align-items:center;gap:30px;}
+  .nlinks a{position:relative;font-size:.9rem;font-weight:500;color:var(--ink-soft);padding:6px 0;transition:.2s;}
+  .nlinks a::after{content:"";position:absolute;left:0;right:100%;bottom:0;height:1.5px;background:var(--orange-deep);transition:right .25s;}
+  .nlinks a:hover{color:var(--ink);}
+  .nlinks a:hover::after{right:0;}
+  .nlinks a.nav-cta{margin-left:8px;display:inline-flex;align-items:center;gap:8px;background:var(--ink);color:#fff;font-family:var(--sans);font-weight:700;font-size:.86rem;padding:11px 20px;transition:.2s;}
+  .nlinks a.nav-cta::after{display:none;}
+  .nlinks a.nav-cta:hover{background:var(--orange-deep);color:#fff;}
+  .nav-cta svg{width:14px;height:14px;}
+  .burger{display:none;width:46px;height:46px;border:none;background:transparent;cursor:pointer;padding:12px;}
+  .burger span{display:block;height:2px;background:var(--ink);transition:.28s;}
+  .burger span+span{margin-top:6px;}
+  .burger.open span:nth-child(1){transform:translateY(8px) rotate(45deg);}
+  .burger.open span:nth-child(2){opacity:0;}
+  .burger.open span:nth-child(3){transform:translateY(-8px) rotate(-45deg);}
+  .mmenu{display:none;position:fixed;inset:78px 0 0;z-index:99;background:var(--bg);padding:28px 40px;flex-direction:column;gap:2px;transform:translateY(-10px);opacity:0;pointer-events:none;transition:.26s;}
+  .mmenu.open{transform:none;opacity:1;pointer-events:auto;}
+  .mmenu a{font-family:var(--mincho);font-size:1.2rem;padding:18px 4px;border-bottom:1px solid var(--line-soft);}
+  .mmenu .mc{margin-top:22px;background:var(--orange-deep);color:#fff;text-align:center;font-family:var(--sans);font-weight:700;border:none;}
+
+  /* ---------- Hero ---------- */
+  .hero{display:grid;grid-template-columns:1.08fr .92fr;min-height:calc(100vh - 78px);}
+  .hero-l{display:flex;flex-direction:column;justify-content:center;padding:80px 70px 80px 0;}
+  .hero .wrap-l{max-width:640px;margin-left:max(40px,calc((100vw - var(--maxw))/2 + 40px));}
+  .hero h1{font-family:var(--mincho);font-weight:700;font-size:clamp(2.6rem,4.6vw,4.1rem);line-height:1.4;letter-spacing:.03em;margin:30px 0 0;}
+  .hero h1 .o{color:var(--orange-deep);}
+  .hero .sub{margin-top:34px;font-size:1.06rem;color:var(--ink-soft);line-height:2.1;max-width:30em;}
+  .hero-actions{display:flex;gap:18px;flex-wrap:wrap;margin-top:44px;}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:11px;font-family:var(--sans);font-weight:700;font-size:1rem;cursor:pointer;border:none;padding:17px 34px;transition:.22s;line-height:1;}
+  .btn-primary{background:var(--orange-deep);color:#fff;}
+  .btn-primary:hover{background:#cf7100;transform:translateY(-2px);}
+  .btn-ghost{background:transparent;color:var(--ink);border:1.5px solid var(--line);}
+  .btn-ghost:hover{border-color:var(--orange);color:var(--orange-deep);}
+  .btn svg{width:18px;height:18px;}
+  .hero-r{background:var(--orange);position:relative;overflow:hidden;display:grid;place-items:center;}
+  .hero-r .vlabel{position:absolute;top:50%;right:34px;transform:translateY(-50%) rotate(180deg);writing-mode:vertical-rl;font-family:var(--sans);font-weight:700;font-size:.74rem;letter-spacing:.42em;color:rgba(255,255,255,.75);}
+  .hero-checker{display:grid;grid-template-columns:1fr 1fr;gap:18px;width:min(46%,300px);transform:rotate(45deg);}
+  .hero-checker i{aspect-ratio:1;border-radius:20px;}
+  .hero-checker i:nth-child(1){background:var(--pale);}
+  .hero-checker i:nth-child(2){background:var(--cream);}
+  .hero-checker i:nth-child(3){background:var(--cream);}
+  .hero-checker i:nth-child(4){background:var(--pale);}
+  .hero-r::after{content:"";position:absolute;width:160%;height:42px;background:rgba(255,255,255,.10);bottom:14%;left:-30%;transform:rotate(-12deg);}
+
+  /* ---------- Section frame ---------- */
+  .section{padding:128px 0;}
+  .shead{display:flex;align-items:flex-end;justify-content:space-between;gap:30px;border-bottom:1px solid var(--line);padding-bottom:26px;margin-bottom:64px;}
+  .shead h2{font-size:clamp(1.9rem,3vw,2.7rem);letter-spacing:.04em;flex:none;white-space:nowrap;}
+  .shead .kicker{margin-bottom:0;}
+
+  /* ---------- 代表挨拶 ---------- */
+  .greet-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:72px;align-items:center;}
+  .gphoto{position:relative;}
+  .gphoto img{width:100%;aspect-ratio:4/4.2;object-fit:cover;object-position:62% 28%;}
+  .gphoto::before{content:"";position:absolute;left:-22px;top:-22px;width:120px;height:120px;background:var(--pale);z-index:-1;}
+  .gphoto::after{content:"";position:absolute;right:-22px;bottom:-22px;width:120px;height:120px;border:1.5px solid var(--orange);z-index:-1;}
+  .gsig-badge{position:absolute;left:0;bottom:0;background:var(--ink);color:var(--cream);padding:16px 24px;display:flex;align-items:center;gap:14px;}
+  .gsig-badge img{width:34px;height:34px;}
+  .gsig-badge b{font-family:var(--mincho);font-size:1.05rem;display:block;letter-spacing:.05em;}
+  .gsig-badge span{font-size:.68rem;color:#b8ab98;letter-spacing:.1em;}
+  .greet h2{font-size:clamp(1.9rem,3.2vw,2.9rem);line-height:1.55;margin-bottom:36px;}
+  .greet .gbody p{color:var(--ink-soft);font-size:1.04rem;line-height:2.15;margin-bottom:22px;}
+  .gsign{margin-top:42px;display:flex;align-items:baseline;gap:16px;}
+  .gsign .r{font-size:.78rem;letter-spacing:.14em;color:var(--ink-faint);}
+  .gsign .n{font-family:var(--mincho);font-size:1.6rem;font-weight:600;letter-spacing:.06em;}
+  .gsign .n small{font-family:var(--sans);font-size:.8rem;font-weight:400;color:var(--ink-faint);margin-left:12px;letter-spacing:.08em;}
+
+  /* ---------- 業務内容 (editorial index) ---------- */
+  .svc-row{display:grid;grid-template-columns:130px 320px 1fr;gap:40px;padding:44px 0;border-top:1px solid var(--line);align-items:start;transition:.24s;}
+  .svc-row:last-child{border-bottom:1px solid var(--line);}
+  .svc-row:hover{background:linear-gradient(90deg,rgba(243,155,23,.05),transparent 60%);}
+  .svc-num{font-family:var(--mincho);font-weight:600;font-size:3.4rem;line-height:.9;color:var(--orange);letter-spacing:.02em;}
+  .svc-ttl h3{font-size:1.5rem;line-height:1.5;margin-bottom:14px;}
+  .svc-ttl .tag{font-family:var(--mincho);color:var(--orange-deep);font-size:.98rem;line-height:1.8;}
+  .svc-body p{color:var(--ink-soft);font-size:.98rem;line-height:2.05;margin-bottom:16px;}
+  .svc-body p:last-child{margin-bottom:0;}
+  .svc-items{display:flex;flex-direction:column;}
+  .svc-items .it{padding:16px 0;border-bottom:1px dashed var(--line);}
+  .svc-items .it:first-child{padding-top:0;}
+  .svc-items .it:last-child{border-bottom:none;padding-bottom:0;}
+  .svc-items .it b{font-family:var(--mincho);font-weight:600;font-size:1.05rem;display:inline-block;margin-bottom:3px;}
+  .svc-items .it span{display:block;font-size:.9rem;color:var(--ink-soft);line-height:1.8;}
+
+  /* ---------- ご相談への姿勢 (dark) ---------- */
+  .stance{background:var(--ink);color:var(--cream);}
+  .stance .kicker{color:var(--pale);}
+  .stance .kicker::before{background:var(--pale);}
+  .stance h2{font-size:clamp(2rem,3.6vw,3rem);line-height:1.55;color:#fff;max-width:18em;margin:24px 0 56px;}
+  .worries{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-bottom:56px;}
+  .worry{border:1px solid rgba(255,255,255,.16);padding:34px 34px 34px 38px;position:relative;font-family:var(--mincho);font-size:1.12rem;line-height:2;color:#f3ece0;}
+  .worry::before{content:"“";position:absolute;top:6px;left:16px;font-family:var(--mincho);font-size:2.6rem;color:var(--orange);}
+  .stance-body{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;border-top:1px solid rgba(255,255,255,.16);padding-top:46px;}
+  .stance-body p{color:#cabfae;font-size:.98rem;line-height:2.05;}
+  .stance-body p .lead-mark{display:block;font-family:var(--mincho);color:var(--pale);font-size:1.3rem;margin-bottom:14px;}
+
+  /* ---------- 事務所概要 ---------- */
+  .about-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0 64px;}
+  .irow{display:grid;grid-template-columns:130px 1fr;gap:20px;padding:24px 0;border-top:1px solid var(--line);}
+  .irow:nth-child(1),.irow:nth-child(2){border-top:none;}
+  .irow dt{font-size:.8rem;font-weight:700;letter-spacing:.12em;color:var(--ink-faint);padding-top:3px;}
+  .irow dd{margin:0;font-size:1rem;}
+  .irow dd a{color:var(--orange-deep);}
+  .irow .ml{display:flex;flex-direction:column;gap:5px;}
+
+  /* ---------- お問い合わせ ---------- */
+  .contact{background:var(--beige);}
+  .c-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:72px;align-items:start;}
+  .c-intro h2{font-size:clamp(1.9rem,3vw,2.6rem);line-height:1.5;margin:22px 0 26px;}
+  .c-intro p{color:var(--ink-soft);font-size:1rem;line-height:2.05;}
+  .c-intro .hours{margin-top:34px;padding-top:26px;border-top:1px solid var(--line);font-size:.92rem;color:var(--ink-soft);line-height:1.95;}
+  .c-intro .hours b{font-family:var(--mincho);color:var(--ink);}
+  form.cf{background:var(--paper);padding:46px;border:1px solid var(--line);}
+  .fld{margin-bottom:24px;}
+  .fld label{display:block;font-size:.84rem;font-weight:700;margin-bottom:9px;}
+  .fld label .rq{color:var(--orange-deep);font-size:.7rem;margin-left:8px;}
+  .fld input,.fld textarea{width:100%;font-family:var(--sans);font-size:1rem;color:var(--ink);border:1.5px solid var(--line);padding:14px 16px;background:var(--bg);transition:.2s;}
+  .fld input:focus,.fld textarea:focus{outline:none;border-color:var(--orange);background:#fff;box-shadow:0 0 0 4px rgba(243,155,23,.12);}
+  .fld textarea{resize:vertical;min-height:130px;line-height:1.8;}
+  form.cf .btn-primary{width:100%;margin-top:4px;}
+  .fnote{font-size:.78rem;color:var(--ink-faint);margin-top:16px;text-align:center;}
+  .fok{display:none;text-align:center;padding:28px 8px;}
+  .fok.show{display:block;}
+  .fok img{width:48px;height:48px;margin:0 auto 18px;}
+  .fok h3{font-size:1.3rem;margin-bottom:12px;}
+  .fok p{color:var(--ink-soft);}
+
+  /* ---------- Footer ---------- */
+  footer{background:var(--ink);color:#E6DCCD;padding:80px 0 0;}
+  .fgrid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:50px;padding-bottom:56px;}
+  .fbrand .fb{display:flex;align-items:center;gap:13px;margin-bottom:22px;}
+  .fbrand .fb img{width:40px;height:40px;}
+  .fbrand .fb .nm{font-family:var(--mincho);font-size:1.14rem;color:#fff;letter-spacing:.05em;}
+  .fbrand p{font-size:.9rem;color:#A89D8C;line-height:1.95;max-width:28em;}
+  .fcol h4{font-family:var(--sans);font-size:.74rem;letter-spacing:.18em;color:#A89D8C;margin-bottom:20px;}
+  .fcol ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:13px;}
+  .fcol a{font-size:.92rem;transition:.2s;}
+  .fcol a:hover{color:var(--orange);}
+  .fbar{border-top:1px solid rgba(255,255,255,.1);padding:24px 0;text-align:center;font-size:.78rem;color:#8B8272;letter-spacing:.04em;}
+
+  /* ---------- mobile sticky ---------- */
+  .mbar{display:none;position:fixed;left:0;right:0;bottom:0;z-index:90;background:var(--paper);border-top:1px solid var(--line);padding:10px 16px calc(10px + env(safe-area-inset-bottom));}
+  .mbar a{display:flex;align-items:center;justify-content:center;gap:9px;background:var(--orange-deep);color:#fff;font-weight:700;padding:15px;}
+  .mbar svg{width:17px;height:17px;}
+
+  /* ---------- responsive ---------- */
+  @media (max-width:1080px){
+    .hero{grid-template-columns:1fr;min-height:0;}
+    .hero-l{padding:70px 0 60px;}
+    .hero .wrap-l{margin:0 auto;max-width:var(--maxw);padding:0 40px;width:100%;}
+    .hero-r{min-height:300px;padding:60px 0;}
+    .hero-checker{width:200px;}
+    .greet-grid{grid-template-columns:1fr;gap:64px;}
+    .gphoto{max-width:460px;}
+    .svc-row{grid-template-columns:90px 1fr;gap:10px 28px;}
+    .svc-body,.svc-items{grid-column:2;}
+    .svc-ttl{grid-column:2;}
+    .stance-body{grid-template-columns:1fr;gap:26px;}
+    .c-grid{grid-template-columns:1fr;gap:44px;}
+  }
+  @media (max-width:760px){
+    .wrap{padding:0 24px;}
+    .section{padding:84px 0;}
+    .nlinks,.nav-cta{display:none;}
+    .burger{display:block;}
+    .mmenu{display:flex;}
+    .mbar{display:block;}
+    body{padding-bottom:74px;}
+    .hero .wrap-l{padding:0 24px;}
+    .shead{flex-direction:column;align-items:flex-start;gap:14px;}
+    .worries{grid-template-columns:1fr;}
+    .about-grid{grid-template-columns:1fr;}
+    .irow:nth-child(2){border-top:1px solid var(--line);}
+    .svc-row{grid-template-columns:1fr;gap:14px;padding:36px 0;}
+    .svc-num{font-size:2.6rem;}
+    form.cf{padding:30px 22px;}
+    .fgrid{grid-template-columns:1fr;gap:36px;}
+    .gsig-badge{position:static;margin-top:16px;}
+  }
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto;}*{transition:none!important;}}
+</style>
+</head>
+<body>
+
+<div class="topline"></div>
+<header>
+  <div class="wrap nav">
+    <a href="#top" class="brand">
+      <img src="assets/logo.png" alt="オレンジリーガル ロゴ" />
+      <span class="nm">司法書士オレンジリーガル<small>ORANGE LEGAL</small></span>
+    </a>
+    <nav class="nlinks">
+      <a href="#greeting">代表挨拶</a>
+      <a href="#services">業務内容</a>
+      <a href="#stance">ご相談への姿勢</a>
+      <a href="#about">事務所概要</a>
+      <a href="#contact" class="nav-cta">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        ご相談はこちら
+      </a>
+    </nav>
+    <button class="burger" id="burger" aria-label="メニュー"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<div class="mmenu" id="mmenu">
+  <a href="#greeting">代表挨拶</a>
+  <a href="#services">業務内容</a>
+  <a href="#stance">ご相談への姿勢</a>
+  <a href="#about">事務所概要</a>
+  <a href="#contact">お問い合わせ</a>
+  <a href="#contact" class="mc">ご相談はこちら</a>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-l">
+    <div class="wrap-l">
+      <span class="kicker">司法書士オレンジリーガル</span>
+      <h1>手続きに想いをのせて。<br /><span class="o">温かな安心</span>を。</h1>
+      <p class="sub">２０年間の実務経験に基づいて、複雑な法律手続きをひとつひとつ解きほぐし、手続きの先にある安心をお届けします。</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn btn-primary">ご相談はこちら
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a href="#services" class="btn btn-ghost">業務内容を見る</a>
+      </div>
+    </div>
+  </div>
+  <div class="hero-r">
+    <span class="vlabel">JUDICIAL SCRIVENER OFFICE</span>
+    <div class="hero-checker"><i></i><i></i><i></i><i></i></div>
+  </div>
+</section>
+
+<!-- 代表挨拶 -->
+<section class="section" id="greeting">
+  <div class="wrap">
+    <div class="greet-grid">
+      <div class="gphoto">
+        <img src="assets/cho-portrait.png" alt="代表 司法書士 趙 成晃" />
+        <div class="gsig-badge">
+          <img src="assets/logo.png" alt="" />
+          <div><b>趙 成晃</b><span>代表 認定司法書士</span></div>
+        </div>
+      </div>
+      <div class="greet">
+        <span class="kicker">代表挨拶</span>
+        <h2>温かな「願い」を、<br />確かな「かたち」へ。</h2>
+        <div class="gbody">
+          <p>お客様が取り組まれている課題の奥には、「よりよい明日にしよう」「新しい一歩を踏み出そう」「大切な人を守りたい」という、前向きで温かな願いが存在しているのだと思います。</p>
+          <p>私たち司法書士の役割は、その言葉にしづらい願いを汲み取り、法的手続きという社会的な形へと具現化することです。決して特別なご準備は必要ありません。ありのままの想いを、安心してお聞かせください。</p>
+          <p>その「願い」が確かな「かたち」になるまで、ご一緒させていただきたいと思っています。</p>
+        </div>
+        <div class="gsign">
+          <span class="r">代表 司法書士</span>
+          <span class="n">趙 成晃<small>Cho Shigeaki</small></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 業務内容 -->
+<section class="section" id="services">
+  <div class="wrap">
+    <div class="shead">
+      <span class="kicker">業務内容</span>
+      <h2>業務紹介</h2>
+    </div>
+    <div class="svc-index">
+      <div class="svc-row">
+        <div class="svc-num">01</div>
+        <div class="svc-ttl">
+          <h3>不動産売買・決済に関する登記</h3>
+          <p class="tag">新たな生活と事業の基盤を、確実・安全に築くために</p>
+        </div>
+        <div class="svc-body">
+          <p>不動産の購入や売却は、お客様の人生やビジネスにおける大きな「前進」のタイミングです。その大切な願いが込められたお取引を、遅滞やリスクなく完了させることが私の仕事です。横浜の第一線で年間500件以上の決済をコントロールし続けてきた20年の経験とノウハウを注ぎ込みます。不動産業者様や金融機関様との連携もスムーズに行い、たとえ複雑な権利関係であっても、安全と安心をお約束する確実な登記手続きを実現します。</p>
+        </div>
+      </div>
+      <div class="svc-row">
+        <div class="svc-num">02</div>
+        <div class="svc-ttl">
+          <h3>相続手続き</h3>
+          <p class="tag">ご家族の「想い」を整理し、次世代へ円滑に繋ぐために</p>
+        </div>
+        <div class="svc-body">
+          <p>相続は、単なる財産の移転ではなく、亡くなられた方の想いを次の世代へと引き継ぐ大切なバトンタッチです。戸籍の収集から遺産分割協議書の作成、不動産の名義変更まで、多岐にわたる複雑な手続きをお任せいただけます。ご遺族の皆様が抱える不安やご負担を少しでも軽くし、皆様が前を向いて新しい日常へと歩み出せるよう、一人ひとりのご事情に寄り添い、丁寧かつ迅速に手続きを進めていきます。</p>
+        </div>
+      </div>
+      <div class="svc-row">
+        <div class="svc-num">03</div>
+        <div class="svc-ttl">
+          <h3>家族信託手続き</h3>
+          <p class="tag">将来の不安を取り除き、大切な財産と「願い」を守り抜くために</p>
+        </div>
+        <div class="svc-body">
+          <p>「なるべく長く住み慣れた自宅で過ごしたい」「もしもの時は、信頼できる家族に管理を託したい」。ご自身とご家族のそんな温かな願いを、お元気なうちから安全な法的手続きとして形にしておくのが家族信託です。</p>
+          <p>当事務所では、ご自宅と大切な預金を将来の不安から守るため、お客様の「こうありたい」という想いを第一にした財産管理スキームを構築いたします。一部の特別な方だけでなく、すべてのご家庭に安心をお届けできるよう、ご負担の少ない最適な道筋をご提案いたします。</p>
+        </div>
+      </div>
+      <div class="svc-row">
+        <div class="svc-num">04</div>
+        <div class="svc-ttl">
+          <h3>企業法務・商業登記</h3>
+        </div>
+        <div class="svc-items">
+          <div class="it"><b>商業・法人登記</b><span>会社設立、役員変更、本店移転など、企業活動の基盤整備</span></div>
+          <div class="it"><b>組織再編</b><span>合併、会社分割など、高度な企業戦略の法務サポート</span></div>
+          <div class="it"><b>企業法務サポート</b><span>契約書のリーガルチェック、株主総会運営の支援等</span></div>
+        </div>
+      </div>
+      <div class="svc-row">
+        <div class="svc-num">05</div>
+        <div class="svc-ttl">
+          <h3>特殊な登記・裁判・財産管理業務</h3>
+        </div>
+        <div class="svc-items">
+          <div class="it"><b>不動産投資信託（REIT）関連登記</b><span>専門的なスキームへの対応</span></div>
+          <div class="it"><b>債権譲渡・動産譲渡登記</b><span>企業の資金調達に伴う担保化の手続き</span></div>
+          <div class="it"><b>成年後見・任意後見</b><span>判断能力に不安のある方の財産と権利の保護</span></div>
+          <div class="it"><b>裁判業務</b><span>簡裁訴訟代理、各種申立書の作成支援</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ご相談への姿勢 -->
+<section class="section stance" id="stance">
+  <div class="wrap">
+    <span class="kicker">ご相談への姿勢</span>
+    <h2>ありのままの想いを、そのままお持ちください。</h2>
+    <div class="worries">
+      <div class="worry">法律の知識がないから、こんなことを聞いては失礼にならないだろうか</div>
+      <div class="worry">うまくまとまっていない個人的な事情を話してもよいのだろうか</div>
+    </div>
+    <div class="stance-body">
+      <p><span class="lead-mark">01</span>初めて専門家へご相談される際、そのようなご遠慮や緊張を抱かれる方は少なくありません。しかし、当事務所では、そうしたお気遣いは一切不要です。</p>
+      <p><span class="lead-mark">02</span>一見すると手続きには関係のないように思えるお話の中にこそ、お客様が本当に叶えたい「願い」のヒントが隠されていることがよくあります。「何が分からないかが分からない」という状態から一緒に整理をしていくことこそが、私の大切な役割です。</p>
+      <p><span class="lead-mark">03</span>どのような些細な疑問も、言葉にしづらい背景も、すべてを否定することなく安全にお預かりいたします。専門家に対して気後れすることなく、どうか飾らない、普段通りの言葉でお話しください。</p>
+    </div>
+  </div>
+</section>
+
+<!-- 事務所概要 -->
+<section class="section" id="about">
+  <div class="wrap">
+    <div class="shead">
+      <span class="kicker">事務所概要</span>
+      <h2>事務所のご案内</h2>
+    </div>
+    <dl class="about-grid">
+      <div class="irow"><dt>事務所名</dt><dd>司法書士オレンジリーガル</dd></div>
+      <div class="irow"><dt>代表者</dt><dd>代表 認定司法書士　趙 成晃（Cho Shigeaki）</dd></div>
+      <div class="irow"><dt>所在地</dt><dd>〒221-0044<br />横浜市神奈川区東神奈川二丁目４１番地１<br />オオツカビル４０３</dd></div>
+      <div class="irow"><dt>連絡先</dt><dd><div class="ml"><span>TEL：<a href="tel:045-900-6823">045-900-6823</a></span><span>FAX：045-900-6824</span></div></dd></div>
+      <div class="irow"><dt>メール</dt><dd><a href="mailto:cho@orangelegal.jp">cho@orangelegal.jp</a></dd></div>
+      <div class="irow"><dt>ウェブ</dt><dd><a href="https://www.orangelegal.jp" target="_blank" rel="noopener">www.orangelegal.jp</a></dd></div>
+    </dl>
+  </div>
+</section>
+
+<!-- お問い合わせ -->
+<section class="section contact" id="contact">
+  <div class="wrap">
+    <div class="c-grid">
+      <div class="c-intro">
+        <span class="kicker">お問い合わせ</span>
+        <h2>まずは、お気軽に<br />ご相談ください。</h2>
+        <p>下記フォームよりご相談を承っております。24時間受け付けておりますので、ご都合のよいときにお送りください。内容を確認のうえ、担当者より折り返しご連絡いたします。</p>
+        <div class="hours">
+          <b>受付時間</b><br />
+          平日 9:00 – 18:00（土日祝はご予約にて対応）<br />
+          フォームでのお問い合わせは24時間受付
+        </div>
+      </div>
+      <form class="cf" id="cf" novalidate>
+        <div id="cFields">
+          <div class="fld"><label for="n">お名前<span class="rq">必須</span></label><input type="text" id="n" placeholder="山田 太郎" required /></div>
+          <div class="fld"><label for="e">メールアドレス<span class="rq">必須</span></label><input type="email" id="e" placeholder="example@mail.com" required /></div>
+          <div class="fld"><label for="t">電話番号</label><input type="tel" id="t" placeholder="045-000-0000" /></div>
+          <div class="fld"><label for="m">ご相談内容<span class="rq">必須</span></label><textarea id="m" placeholder="ご相談の概要をご記入ください。うまくまとまっていなくても構いません。" required></textarea></div>
+          <button type="submit" class="btn btn-primary">この内容で送信する
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+          </button>
+          <p class="fnote">送信いただいた内容は相談対応のみに使用し、第三者へ提供することはありません。</p>
+        </div>
+        <div class="fok" id="cOk">
+          <img src="assets/logo.png" alt="" />
+          <h3>送信ありがとうございました</h3>
+          <p>内容を確認のうえ、担当者より折り返しご連絡いたします。今しばらくお待ちくださいませ。</p>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div class="fbrand">
+        <div class="fb"><img src="assets/logo.png" alt="" /><span class="nm">司法書士オレンジリーガル</span></div>
+        <p>相続・不動産・家族信託などの手続きを通じて、依頼者お一人おひとりの想いに寄り添う司法書士事務所です。</p>
+      </div>
+      <div class="fcol">
+        <h4>MENU</h4>
+        <ul>
+          <li><a href="#greeting">代表挨拶</a></li>
+          <li><a href="#services">業務内容</a></li>
+          <li><a href="#stance">ご相談への姿勢</a></li>
+          <li><a href="#about">事務所概要</a></li>
+          <li><a href="#contact">お問い合わせ</a></li>
+        </ul>
+      </div>
+      <div class="fcol">
+        <h4>CONTACT</h4>
+        <ul>
+          <li><a href="#contact">お問い合わせフォーム</a></li>
+          <li>〒221-0044<br />横浜市神奈川区東神奈川二丁目<br />４１番地１ オオツカビル４０３</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="fbar">© 2026 司法書士オレンジリーガル（ORANGE LEGAL） All Rights Reserved.</div>
+</footer>
+
+<div class="mbar">
+  <a href="#contact">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+    ご相談はこちら
+  </a>
+</div>
+
+<script>
+  const burger=document.getElementById('burger'),mmenu=document.getElementById('mmenu');
+  burger.addEventListener('click',()=>{const o=mmenu.classList.toggle('open');burger.classList.toggle('open',o);document.body.style.overflow=o?'hidden':'';});
+  mmenu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{mmenu.classList.remove('open');burger.classList.remove('open');document.body.style.overflow='';}));
+  const cf=document.getElementById('cf');
+  cf.addEventListener('submit',e=>{e.preventDefault();
+    const n=cf.querySelector('#n').value.trim(),em=cf.querySelector('#e').value.trim(),m=cf.querySelector('#m').value.trim();
+    if(!n||!em||!m){cf.reportValidity();return;}
+    document.getElementById('cFields').style.display='none';
+    document.getElementById('cOk').classList.add('show');
+  });
+</script>
+</body>
+</html>
