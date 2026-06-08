@@ -13,13 +13,15 @@ export default function Greeting() {
               </div>
             </div>
           </div>
-          <div>
+          <div className="greet-head">
             <span className="eyebrow">代表挨拶</span>
             <h2>
               温かな「願い」を、
               <br />
               確かな「かたち」へ。
             </h2>
+          </div>
+          <div className="greet-body">
             <div className="body">
               <p>
                 お客様が取り組まれている課題の奥には、「よりよい明日にしよう」「新しい一歩を踏み出そう」「大切な人を守りたい」という、前向きで温かな願いが存在しているのだと思います。
