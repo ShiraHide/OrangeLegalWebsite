@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 const NAV = [
   { href: "#greeting", label: "代表挨拶" },
   { href: "#services", label: "業務内容" },
-  { href: "#reassure", label: "ご相談への姿勢" },
+  { href: "#reassure", label: "ご相談の際は" },
   { href: "#about", label: "事務所概要" },
   { href: "#contact", label: "お問い合わせ" },
 ];
@@ -27,7 +27,7 @@ export default function Header() {
           <a href="#top" className="brand" aria-label="司法書士オレンジリーガル">
             <img src="/assets/logo.png" alt="オレンジリーガル ロゴ" />
             <span className="name">
-              司法書士オレンジリーガル<small>ORANGE LEGAL</small>
+              司法書士オレンジリーガル<small>ORANGE LEGAL OFFICE</small>
             </span>
           </a>
           <nav className="nav-links" aria-label="グローバルナビ">
@@ -36,19 +36,6 @@ export default function Header() {
                 {n.label}
               </a>
             ))}
-            <a href="#contact" className="nav-cta">
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
-              </svg>
-              ご相談はこちら
-            </a>
           </nav>
           <button
             className={`burger${open ? " open" : ""}`}
@@ -69,9 +56,6 @@ export default function Header() {
             {n.label}
           </a>
         ))}
-        <a href="#contact" className="mphone" onClick={() => setOpen(false)}>
-          ご相談はこちら
-        </a>
       </div>
     </>
   );

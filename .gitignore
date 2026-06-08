@@ -29,3 +29,7 @@ next-env.d.ts
 
 # claude code local settings
 .claude/settings.local.json
+
+# PHP contact form secrets / vendored library (set up on the server)
+public/contact.config.php
+public/lib/

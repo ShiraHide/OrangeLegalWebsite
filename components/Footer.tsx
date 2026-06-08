@@ -22,7 +22,7 @@ export default function Footer() {
                 <a href="#services">業務内容</a>
               </li>
               <li>
-                <a href="#reassure">ご相談への姿勢</a>
+                <a href="#reassure">ご相談の際は</a>
               </li>
               <li>
                 <a href="#about">事務所概要</a>

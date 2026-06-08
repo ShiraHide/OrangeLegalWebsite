@@ -174,6 +174,28 @@ header{
 .hero-inner .lead{margin-left:auto;margin-right:auto;max-width:none;white-space:nowrap;font-size:1.02rem;}
 .hero-inner .hero-actions{justify-content:center;}
 
+.hero-copy .lead{margin-bottom:0;max-width:34em;}
+.hero-figure{position:relative;}
+.hero-figure img{
+  width:100%;aspect-ratio:4/3.4;object-fit:cover;display:block;
+  /* 四辺の縁だけ背景へ完全フェード（左右×上下のグラデを掛け合わせ）。中央は広くくっきり保持 */
+  -webkit-mask-image:
+    linear-gradient(to right, transparent 0, rgba(0,0,0,0.12) 8%, rgba(0,0,0,0.6) 13%, #000 16%, #000 84%, rgba(0,0,0,0.6) 87%, rgba(0,0,0,0.12) 92%, transparent 100%),
+    linear-gradient(to bottom, transparent 0, rgba(0,0,0,0.12) 8%, rgba(0,0,0,0.6) 13%, #000 16%, #000 84%, rgba(0,0,0,0.6) 87%, rgba(0,0,0,0.12) 92%, transparent 100%);
+  mask-image:
+    linear-gradient(to right, transparent 0, rgba(0,0,0,0.12) 8%, rgba(0,0,0,0.6) 13%, #000 16%, #000 84%, rgba(0,0,0,0.6) 87%, rgba(0,0,0,0.12) 92%, transparent 100%),
+    linear-gradient(to bottom, transparent 0, rgba(0,0,0,0.12) 8%, rgba(0,0,0,0.6) 13%, #000 16%, #000 84%, rgba(0,0,0,0.6) 87%, rgba(0,0,0,0.12) 92%, transparent 100%);
+  -webkit-mask-composite:source-in;
+  mask-composite:intersect;
+}
+
+.profile{margin-top:26px;padding-top:22px;border-top:1px solid rgba(58,51,44,.1);}
+.profile-head{
+  font-family:var(--sans);font-size:.74rem;font-weight:700;
+  letter-spacing:.16em;color:var(--orange-deep);margin-bottom:10px;
+}
+.profile p{color:var(--ink-soft);font-size:.92rem;line-height:1.95;}
+
 .svc-list{list-style:none;margin:14px 0 0;padding:0;display:flex;flex-direction:column;gap:12px;}
 .svc-list li{background:var(--beige);border-radius:0;padding:17px 22px;}
 .svc-list b{display:flex;align-items:flex-start;gap:11px;font-family:var(--serif);font-weight:600;font-size:1.04rem;color:var(--ink);line-height:1.55;}
@@ -200,8 +222,9 @@ header{
 
 /* ---------- 代表挨拶 ---------- */
 .greet{background:var(--beige);position:relative;overflow:hidden;}
-.greet-grid{display:grid;grid-template-columns:.82fr 1.18fr;gap:64px;align-items:center;}
-.portrait{position:relative;}
+.greet-grid{display:grid;grid-template-columns:.82fr 1.18fr;gap:64px;align-items:start;}
+/* 画像の上辺を見出し「温かな「願い」を、」の上辺に合わせる（eyebrowの高さ分だけ下げる） */
+.portrait{position:relative;margin-top:48px;}
 .portrait img{
   width:100%;border-radius:var(--radius-lg);box-shadow:var(--shadow);
   aspect-ratio:4/3.4;object-fit:cover;object-position:60% 30%;
@@ -359,7 +382,7 @@ footer{background:var(--ink);color:#E9E2D8;padding:72px 0 0;}
   .hero-grid{grid-template-columns:1fr;gap:40px;}
   .hero-card{max-width:520px;}
   .greet-grid{grid-template-columns:1fr;gap:54px;}
-  .portrait{max-width:480px;}
+  .portrait{max-width:480px;margin-top:0;}
   .svc-grid{grid-template-columns:repeat(2,1fr);}
   .card--feature,.card--mini{grid-column:span 1;}
   .card--row{grid-template-columns:1fr;gap:18px;}

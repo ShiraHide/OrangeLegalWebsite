@@ -16,7 +16,7 @@ export default function Reassure() {
       <div className="wrap">
         <div className="inner">
           <span className="eyebrow" style={{ justifyContent: "center" }}>
-            ご相談への姿勢
+            ご相談の際は
           </span>
           <h2>
             ありのままの想いを、

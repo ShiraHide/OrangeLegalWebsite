@@ -37,6 +37,12 @@ export default function Greeting() {
                 趙 成晃<small>Cho Shigeaki</small>
               </span>
             </div>
+            <div className="profile">
+              <h4 className="profile-head">プロフィール</h4>
+              <p>
+                1996年法政大学法学部卒。ウェブデザイン会社勤務を経て、2006年、横浜の大手である司法書士法人伊藤豪事務所に入社。およそ20年間に渡り、不動産売買・決済に関する登記手続きを中心とした幅広い業務を、年500件、累計1万件以上担当。2024年司法書士登録。2026年司法書士オレンジリーガルを創業。
+              </p>
+            </div>
           </div>
         </div>
       </div>

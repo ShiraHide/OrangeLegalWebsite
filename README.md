@@ -1,40 +1,27 @@
 # 司法書士オレンジリーガル ウェブサイト
 
-Claude Design のハンドオフ（`orangelegal-homepage/`）をもとに、Next.js（App Router / TypeScript）で再構築したコーポレートサイトです。デザインは元モック `index.html` をピクセル単位で再現しています。
+Claude Design のハンドオフ（`orangelegal-homepage/`）をもとに、Next.js で再構築したコーポレートサイトです。デザインは元モック `index.html` をピクセル単位で再現しています。
 
-## 開発
+本番は **Xserver レンタルサーバー**で公開する構成です。サイトは**静的書き出し**し、お問い合わせフォームは **PHP + Google Workspace SMTP** で送信します（第三者のフォームサービスは不使用）。
+
+> 公開・運用の詳しい手順は **[運用公開手順.md](運用公開手順.md)** を参照してください。
+
+## 開発（ローカル確認）
 
 ```bash
 npm install
 npm run dev      # http://localhost:3000
 ```
 
-## 本番ビルド
+> ローカルの `npm run dev` ではフォームの実送信はできません（送信処理はサーバー上のPHPで動くため）。見た目・挙動の確認用です。
+
+## 本番ファイルの生成（静的書き出し）
 
 ```bash
-npm run build
-npm run start
+npm run build    # → out/ に公開用ファイルを生成
 ```
 
-## お問い合わせフォームの送信設定（Resend）
-
-フォーム送信は [Resend](https://resend.com) を利用します。`.env.local.example` をコピーして `.env.local` を作成し、値を設定してください。
-
-```bash
-cp .env.local.example .env.local
-```
-
-| 変数 | 内容 |
-|---|---|
-| `RESEND_API_KEY` | Resend の API キー（`re_...`） |
-| `CONTACT_TO_EMAIL` | 問い合わせの受信先メール（例: cho@orangelegal.jp） |
-| `CONTACT_FROM_EMAIL` | 送信元。ドメイン未認証の検証段階は `onboarding@resend.dev` が使えます |
-
-> 未設定の場合、フォームは「サーバーの設定が未完了です」と表示し、メールは送信されません（サイト自体は表示されます）。
-
-### 本番の送信元ドメイン
-
-実運用では Resend で `orangelegal.jp` のドメイン認証（DNS設定）を行い、`CONTACT_FROM_EMAIL` を `no-reply@orangelegal.jp` 等に変更してください。
+`out/` の中身を Xserver の公開フォルダにアップロードします。詳細は [運用公開手順.md](運用公開手順.md)。
 
 ## 構成
 
@@ -42,14 +29,24 @@ cp .env.local.example .env.local
 app/
 ├─ layout.tsx          フォント（Noto Sans/Serif JP）・メタデータ
 ├─ page.tsx            セクションの組み立て
-├─ globals.css         デザインのCSS（元モックから移植）
-└─ api/contact/route.ts  Resend送信API
+└─ globals.css         デザインのCSS（元モックから移植）
 components/             セクション別コンポーネント
-public/assets/          ロゴ・代表写真
+public/
+├─ contact.php             お問い合わせ送信処理（PHP / Google SMTP）
+└─ contact.config.sample.php  送信設定のサンプル（実体はサーバー上に作成）
 orangelegal-homepage/   元のClaude Designハンドオフ（参照用）
 ```
 
+## お問い合わせフォームの送信（本番）
+
+- フロントは `/contact.php` に入力内容をPOST。
+- `contact.php` が Google Workspace の SMTP 経由で `mail_to` 宛にメール送信。
+- SMTP情報は `contact.config.php`（サーバー上にのみ置く・Git管理外）に設定。
+- 送信ライブラリに PHPMailer を使用（`public/lib/PHPMailer/` に設置）。
+
+設定手順は [運用公開手順.md](運用公開手順.md) の「2. Google Workspace SMTP の準備」「4〜6」を参照。
+
 ## 元モックからの変更点
 
-- フォームは見た目だけのダミーから、**Resend経由の実送信**に変更。
+- フォームは見た目だけのダミーから、**PHP + Google Workspace SMTP による実送信**に変更。
 - 地図はCSSのダミーのまま（Google Map埋め込みは未実装）。必要なら別途対応。
