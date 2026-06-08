@@ -369,21 +369,6 @@ footer{background:var(--ink);color:#E9E2D8;padding:72px 0 0;}
 .foot-col a:hover{color:var(--orange);}
 .foot-bar{border-top:1px solid rgba(255,255,255,.1);padding:24px 0;text-align:center;font-size:.8rem;color:#8C8378;letter-spacing:.04em;}
 
-/* ---------- Mobile sticky bar ---------- */
-.mbar{
-  display:none;position:fixed;left:0;right:0;bottom:0;z-index:90;
-  background:var(--white);border-top:1px solid rgba(58,51,44,.1);
-  padding:10px 14px calc(10px + env(safe-area-inset-bottom));
-  grid-template-columns:1fr;gap:10px;box-shadow:0 -8px 24px -16px rgba(58,51,44,.4);
-}
-.mbar a{
-  display:flex;align-items:center;justify-content:center;gap:8px;
-  padding:14px;border-radius:13px;font-weight:700;font-size:.95rem;
-}
-.mbar .call{background:var(--ink);color:#fff;}
-.mbar .consult{background:var(--orange-deep);color:#fff;}
-.mbar svg{width:17px;height:17px;}
-
 /* ---------- Responsive ---------- */
 @media (max-width:910px){
   .hero-inner .lead{white-space:normal;}
@@ -417,8 +402,6 @@ footer{background:var(--ink);color:#E9E2D8;padding:72px 0 0;}
   .nav-links,.nav-cta{display:none;}
   .burger{display:block;}
   .mobile-menu{display:flex;}
-  .mbar{display:grid;}
-  body{padding-bottom:72px;}
   .svc-grid{grid-template-columns:1fr;}
   .info-row{grid-template-columns:96px 1fr;gap:14px;}
   form.cform{padding:28px 22px;}
