@@ -14,7 +14,7 @@ export default function About() {
             </div>
             <div className="info-row">
               <dt>代表者</dt>
-              <dd>代表 認定司法書士　趙 成晃（Cho Shigeaki）</dd>
+              <dd>趙 成晃（Cho Shigeaki）</dd>
             </div>
             <div className="info-row">
               <dt>所在地</dt>
@@ -35,24 +35,6 @@ export default function About() {
                   </span>
                   <span>FAX：045-900-6824</span>
                 </div>
-              </dd>
-            </div>
-            <div className="info-row">
-              <dt>メール</dt>
-              <dd>
-                <a href="mailto:cho@orangelegal.jp">cho@orangelegal.jp</a>
-              </dd>
-            </div>
-            <div className="info-row">
-              <dt>ウェブ</dt>
-              <dd>
-                <a
-                  href="https://www.orangelegal.jp"
-                  target="_blank"
-                  rel="noopener"
-                >
-                  www.orangelegal.jp
-                </a>
               </dd>
             </div>
           </dl>
