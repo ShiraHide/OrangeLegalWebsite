@@ -22,13 +22,7 @@ export default function Footer() {
                 <a href="#services">業務内容</a>
               </li>
               <li>
-                <a href="#reassure">ご相談の際は</a>
-              </li>
-              <li>
                 <a href="#about">事務所概要</a>
-              </li>
-              <li>
-                <a href="#contact">お問い合わせ</a>
               </li>
             </ul>
           </div>
@@ -36,7 +30,7 @@ export default function Footer() {
             <h4>CONTACT</h4>
             <ul>
               <li>
-                <a href="#contact">お問い合わせフォーム</a>
+                TEL：<a href="tel:045-900-6823">045-900-6823</a>
               </li>
               <li>
                 〒221-0044

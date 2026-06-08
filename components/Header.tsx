@@ -5,9 +5,7 @@ import { useEffect, useState } from "react";
 const NAV = [
   { href: "#greeting", label: "代表挨拶" },
   { href: "#services", label: "業務内容" },
-  { href: "#reassure", label: "ご相談の際は" },
   { href: "#about", label: "事務所概要" },
-  { href: "#contact", label: "お問い合わせ" },
 ];
 
 export default function Header() {
