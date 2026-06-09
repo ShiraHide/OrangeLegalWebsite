@@ -38,6 +38,7 @@ p{margin:0;text-wrap:pretty;}
 .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px;}
 .section{padding:108px 0;}
 .section--tight{padding:84px 0;}
+.section--beige{background:var(--beige);}
 
 /* ---------- Diamond motif ---------- */
 .mark{

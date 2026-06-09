@@ -1,6 +1,6 @@
 export default function About() {
   return (
-    <section className="section" id="about">
+    <section className="section section--beige" id="about">
       <div className="wrap">
         <div className="shead">
           <span className="eyebrow">事務所概要</span>
