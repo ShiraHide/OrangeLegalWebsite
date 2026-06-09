@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://orangelegal.jp/sitemap.xml
