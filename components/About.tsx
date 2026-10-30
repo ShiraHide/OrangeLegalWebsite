@@ -1,3 +1,7 @@
+const MAP_QUERY = encodeURIComponent(
+  "〒220-0005 神奈川県横浜市西区南幸2丁目20-12 タイヨウビル"
+);
+
 export default function About() {
   return (
     <section className="section section--beige" id="about">
@@ -19,11 +23,28 @@ export default function About() {
             <div className="info-row">
               <dt>所在地</dt>
               <dd>
-                〒221-0044
+                〒220-0005
                 <br />
-                横浜市神奈川区東神奈川二丁目４１番地１
+                横浜市西区<span className="nw">南幸二丁目２０番１２号</span>
                 <br />
-                オオツカビル４０３
+                タイヨウビル６０７
+              </dd>
+            </div>
+            <div className="info-row">
+              <dt>アクセス</dt>
+              <dd>
+                <ul className="access-list">
+                  <li>
+                    <b>横浜駅</b>より<span className="nw">徒歩約8分</span>
+                    <span className="sub">
+                      （JR・東急・京急・相鉄・みなとみらい線・市営地下鉄）
+                    </span>
+                  </li>
+                  <li>
+                    <b>相鉄線 平沼橋駅</b>より
+                    <span className="nw">徒歩約11分</span>
+                  </li>
+                </ul>
               </dd>
             </div>
             <div className="info-row">
@@ -38,6 +59,25 @@ export default function About() {
               </dd>
             </div>
           </dl>
+          <div className="map-col">
+            <div className="gmap">
+              <iframe
+                src={`https://maps.google.com/maps?q=${MAP_QUERY}&hl=ja&z=17&output=embed`}
+                title="司法書士オレンジリーガル 地図"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                allowFullScreen
+              />
+            </div>
+            <a
+              className="gmap-link"
+              href={`https://www.google.com/maps/search/?api=1&query=${MAP_QUERY}`}
+              target="_blank"
+              rel="noopener"
+            >
+              Googleマップで開く
+            </a>
+          </div>
         </div>
       </div>
     </section>

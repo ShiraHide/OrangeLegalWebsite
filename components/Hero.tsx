@@ -1,3 +1,5 @@
+import News from "@/components/News";
+
 export default function Hero() {
   return (
     <section className="hero" id="top">
@@ -25,6 +27,7 @@ export default function Hero() {
               alt="あたたかな相談デスクのイメージ"
             />
           </div>
+          <News />
         </div>
       </div>
     </section>

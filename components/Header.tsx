@@ -3,9 +3,10 @@
 import { useEffect, useState } from "react";
 
 const NAV = [
+  { href: "#news", label: "お知らせ" },
   { href: "#greeting", label: "代表挨拶" },
   { href: "#services", label: "業務内容" },
-  { href: "#about", label: "事務所概要" },
+  { href: "#about", label: "事務所概要・アクセス" },
 ];
 
 export default function Header() {

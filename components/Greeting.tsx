@@ -5,13 +5,6 @@ export default function Greeting() {
         <div className="greet-grid">
           <div className="portrait">
             <img src="/assets/cho-portrait.png" alt="代表 司法書士 趙 成晃" />
-            <div className="badge">
-              <img src="/assets/logo.png" alt="" className="badge-logo" />
-              <div>
-                <b>趙 成晃</b>
-                <span>代表 認定司法書士</span>
-              </div>
-            </div>
           </div>
           <div className="greet-head">
             <span className="eyebrow">代表挨拶</span>

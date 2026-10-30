@@ -36,4 +36,9 @@ orangelegal-homepage/  元のClaude Designハンドオフ（参照用）
 ## 元モックからの変更点
 
 - お問い合わせフォームは初期リリースでは設置せず、連絡先（電話番号・住所）の掲載に変更。
-- 地図はCSSのダミーのまま（Google Map埋め込みは未実装）。必要なら別途対応。
+- 地図は「事務所のご案内」に Google マップを埋め込み済み（`components/About.tsx` の `MAP_QUERY` の住所を変えると地図・「Googleマップで開く」リンクの両方が切り替わる）。API キー不要の埋め込み URL を使用。
+- トップのヒーロー内に「お知らせ」欄を追加（`components/News.tsx` の `NEWS` 配列に追記。最新5件まで表示）。
+
+## ローカル確認（Windows）
+
+`start-dev.bat` をダブルクリックすると `npm run dev -- -p 3010` が起動し、http://localhost:3010 で確認できます（ウィンドウを閉じると停止）。

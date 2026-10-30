@@ -20,7 +20,7 @@ const SITE_URL = "https://orangelegal.jp";
 const TITLE =
   "司法書士オレンジリーガル｜横浜の相続・不動産・家族信託のご相談";
 const DESCRIPTION =
-  "横浜・東神奈川の司法書士オレンジリーガル。相続・不動産・家族信託など、複雑な手続きをひとつひとつ解きほぐし、手続きの先にある安心をお届けします。";
+  "横浜駅近くの司法書士オレンジリーガル。相続・不動産・家族信託など、複雑な手続きをひとつひとつ解きほぐし、手続きの先にある安心をお届けします。";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -30,7 +30,8 @@ export const metadata: Metadata = {
     "司法書士",
     "オレンジリーガル",
     "横浜",
-    "東神奈川",
+    "横浜駅",
+    "西区",
     "相続",
     "不動産登記",
     "家族信託",
@@ -76,15 +77,15 @@ const jsonLd = {
   founder: { "@type": "Person", name: "趙 成晃" },
   address: {
     "@type": "PostalAddress",
-    postalCode: "221-0044",
+    postalCode: "220-0005",
     addressRegion: "神奈川県",
-    addressLocality: "横浜市神奈川区",
-    streetAddress: "東神奈川二丁目41番地1 オオツカビル403",
+    addressLocality: "横浜市西区",
+    streetAddress: "南幸二丁目20番12号 タイヨウビル607",
     addressCountry: "JP",
   },
   areaServed: "横浜市",
   description:
-    "横浜・東神奈川の司法書士事務所。相続・不動産売買決済・家族信託・商業登記などの手続きをサポートします。",
+    "横浜駅近くの司法書士事務所。相続・不動産売買決済・家族信託・商業登記などの手続きをサポートします。",
 };
 
 export default function RootLayout({

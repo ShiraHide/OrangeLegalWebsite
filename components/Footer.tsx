@@ -16,13 +16,16 @@ export default function Footer() {
             <h4>MENU</h4>
             <ul>
               <li>
+                <a href="#news">お知らせ</a>
+              </li>
+              <li>
                 <a href="#greeting">代表挨拶</a>
               </li>
               <li>
                 <a href="#services">業務内容</a>
               </li>
               <li>
-                <a href="#about">事務所概要</a>
+                <a href="#about">事務所概要・アクセス</a>
               </li>
             </ul>
           </div>
@@ -33,11 +36,11 @@ export default function Footer() {
                 TEL：<a href="tel:045-900-6823">045-900-6823</a>
               </li>
               <li>
-                〒221-0044
+                〒220-0005
                 <br />
-                横浜市神奈川区東神奈川二丁目
+                横浜市西区南幸二丁目２０番１２号
                 <br />
-                ４１番地１ オオツカビル４０３
+                タイヨウビル６０７
               </li>
             </ul>
           </div>
