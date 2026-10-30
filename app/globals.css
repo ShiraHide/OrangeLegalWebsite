@@ -359,7 +359,7 @@ footer{background:var(--ink);color:#E9E2D8;padding:72px 0 0;}
 /* ---- 2026-11 追加：お知らせ／アクセス／Googleマップ ---- */
 /* お知らせはヒーロー内に配置：PCは下段に全幅、スマホはリードコピーと画像の間 */
 .news{grid-column:1/-1;position:relative;z-index:2;}
-.news-box{background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow-soft);border:1px solid rgba(58,51,44,.05);padding:30px 40px;display:grid;grid-template-columns:150px 1fr;gap:32px;align-items:start;}
+.news-box{background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow-soft);border:3px solid rgba(243,155,23,.35);padding:30px 40px;display:grid;grid-template-columns:150px 1fr;gap:32px;align-items:start;}
 .news-head{font-size:1.2rem;display:flex;flex-direction:column;gap:2px;padding-top:2px;}
 .news-head small{font-family:var(--sans);font-size:.68rem;font-weight:700;letter-spacing:.22em;color:var(--orange-deep);}
 .news-list{list-style:none;margin:0;padding:0;}
