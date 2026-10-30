@@ -35,13 +35,13 @@ export default function About() {
               <dd>
                 <ul className="access-list">
                   <li>
-                    <b>横浜駅</b>より<span className="nw">徒歩約8分</span>
+                    横浜駅より<span className="nw">徒歩約8分</span>
                     <span className="sub">
                       （JR・東急・京急・相鉄・みなとみらい線・市営地下鉄）
                     </span>
                   </li>
                   <li>
-                    <b>相鉄線 平沼橋駅</b>より
+                    相鉄線 平沼橋駅より
                     <span className="nw">徒歩約11分</span>
                   </li>
                 </ul>
