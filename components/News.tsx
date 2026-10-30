@@ -4,7 +4,7 @@ const NEWS: { date: string; title: string; note?: string; href?: string }[] = [
   {
     date: "2026-11-01",
     title: "事務所を移転しました。",
-    note: "新住所：〒220-0005 横浜市西区南幸2-20-12 タイヨウビル607（横浜駅より徒歩約8分）",
+    note: "新住所：〒220-0005 横浜市西区南幸2-20-12 タイヨウビル607（横浜駅西口より徒歩５分）",
     href: "#about",
   },
 ];
